@@ -1,0 +1,27 @@
+1. We create a instance for chef workstation 
+2. We create a chef automate server in aws using https://aws.amazon.com/opsworks/
+3. We create a chef automate by giving it a name and select the appropriate region
+4. Use all the default options and create a server
+5. While the instance is getting launched download the starter kit and credentials files
+6. Create an ec2 instance and download chefDK which suits your instance
+7. Copy the starter kit to the instance and unzip the starter kit.
+8. Make sure that instance uses the ruby version that comes with ChefDK
+   - use this command to change the default path for ruby
+     "echo 'export PATH="/opt/chefdk/embedded/bin:$PATH"' >> ~/.configuration_file && source ~/.configuration_file"
+9. You can use this starter kit as default chef-repo or you can generate a chef repo.
+10. Generating a chef repo
+    - "chef generate repo <REPO_NAME>"
+    
+    :- copy the .chef folder in chef starter kit here 
+    - "cp -r /<PATH>/.chef /<REPO_PATH>/.chef"
+11. Get inside the created repo and verify the ssl certificates for connecting chef workstation to chef automate server.
+    - " knife ssl check "
+12. Get into the node and create a sudo user with a password.
+13. You can now bootstrap the node using knife bootstrap command 
+    - "knife bootstrap <INSTANCE_PRIVATE_IP> -x <SSH_USERNAME> -P <PASSWORD> -N <NODE_NAME> --sudo"
+14. The node is now added to your chef automate server.
+   :-Check list of nodes using 
+     - "knife node list" 
+   :- Check list of nodes with corresponding uri's
+     - "knife node list --with-uri"
+
