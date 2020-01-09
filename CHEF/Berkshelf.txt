@@ -1,0 +1,6 @@
+1. Berkshelf is like installing all the required dependencies of a cookbook from a source called 'chef supermarket'
+2. It is similar to adding a cookbook as a dependency in another cookbook.
+3. To generate a cookbook with berksfile and berks.lock use command with -b as annotation
+   :- "chef generate cookbook <COOKBOOK_NAME> -b"
+4. To install all the dependencies we have stated in the berksfile use
+   :- "berks install"
