@@ -9,3 +9,5 @@
 6. From the chef workstation, to run the cookbook on node by running chef-client
    :- knife ssh 'name:<NODE_NAME>' 'sudo chef-client' -x <USERNAME> -P <PASSWORD>
     -->> username and password are of the user that we created on the node with sudo previlages
+7. If you are having errors and you deleted a playbook you also have to remove it from node's runlist 
+   :- knife node run_list remove NODENAME "role[myrole],recipe[myrecipe]"
