@@ -19,7 +19,10 @@
 12. Get into the node and create a sudo user with a password.
 13. You can now bootstrap the node using knife bootstrap command 
     - "knife bootstrap <INSTANCE_PRIVATE_IP> -x <SSH_USERNAME> -P <PASSWORD> -N <NODE_NAME> --sudo"
-14. The node is now added to your chef automate server.
+14.If you are seeing a ssh error change password authenticity to yes in /etc/ssh/sshd_config
+15. Also add user you have created to /etc/sudoers
+
+16. The node is now added to your chef automate server.
    :-Check list of nodes using 
      - "knife node list" 
    :- Check list of nodes with corresponding uri's

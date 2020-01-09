@@ -1,0 +1,11 @@
+1. After you have a chef repo and you have successfully bootstrapped all the nodes write cookbooks in the "cookbooks" folder of your chef repo
+2. Generate a cookbook by running 
+    :- "chef generate cookbook <COOKBOOK_NAME>"
+3. The recipes which are ruby files are written in recipes folder of your generated cookbook.
+4. Upload the cookbook to chef automate server.
+   :- "knife cookbook upload <COOKBOOK_NAME>
+5. Add the recipe you want to run to the desired node's runlist
+   :- "knife node run_list add <NODE_NAME> "recipe[<RECIPE_NAME]"
+6. From the chef workstation, to run the cookbook on node by running chef-client
+   :- knife ssh 'name:<NODE_NAME>' 'sudo chef-client' -x <USERNAME> -P <PASSWORD>
+    -->> username and password are of the user that we created on the node with sudo previlages
